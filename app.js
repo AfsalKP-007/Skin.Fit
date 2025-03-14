@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+const path = require("path")
 const env = require("dotenv").config();
 const connectDB = require('./config/db'); // Import the connectDB function
 
@@ -15,16 +16,12 @@ console.log("MongoDB URI:", process.env.MONGODB_URI);
 // Connect to the database
 connectDB();
 
-// Set the port from environment variables or default to 3000
-const _PORT = process.env.PORT || 3000;
 
 // Start the server
+const _PORT = process.env.PORT || 3000;
 app.listen(_PORT, () => {
     console.log(`SERVER Running Successfully On PORT: ${_PORT}`);
 });
 
 // Export the app for testing or other modules
 module.exports = app;
-
-
-console.log("Afsal is connected git")
