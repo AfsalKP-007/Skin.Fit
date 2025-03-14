@@ -17,6 +17,10 @@ console.log("MongoDB URI:", process.env.MONGODB_URI);
 connectDB();
 
 
+app.use(express.json())
+app.use(express.urlencoded({ extended: true }));
+
+
 // Start the server
 const _PORT = process.env.PORT || 3000;
 app.listen(_PORT, () => {
