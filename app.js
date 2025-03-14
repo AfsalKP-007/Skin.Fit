@@ -3,6 +3,7 @@ const app = express();
 const path = require("path")
 const env = require("dotenv").config();
 const connectDB = require('./config/db'); // Import the connectDB function
+const userRouter = require("./routes/userRouter")
 
 // Check if dotenv loaded correctly
 if (env.error) {
@@ -19,6 +20,10 @@ connectDB();
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }));
+app.set("view engine", "ejs")
+app.set("views", path.join(__dirname, 'views/user'), path.join(__dirname) )
+app.use(express.static(path.join(__dirname, 'public')))
+app.use("/",userRouter)
 
 
 // Start the server
