@@ -1,3 +1,17 @@
+
+
+
+const pageNotFound = async(req, res)=> {
+    try {
+        res.render("pageNotFound"); 
+
+    } catch (error) {
+        res.redirect("/pageNotFound")
+    }
+}
+
+
+
 const loadHomePage = async (req, res)=> {
     try{
         return res.render("home")
@@ -8,5 +22,6 @@ const loadHomePage = async (req, res)=> {
 }
 
 module.exports = {
-    loadHomePage
+    loadHomePage,
+    pageNotFound
 }
