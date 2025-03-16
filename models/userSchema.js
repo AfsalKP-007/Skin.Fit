@@ -1,9 +1,7 @@
-const mongoose = require("mongoose")
-const {Schema} = mongoose
-
+const mongoose = require("mongoose");
+const { Schema } = mongoose;
 
 const userSchema = new Schema({
-
     name: {
         type: String,
         required: true
@@ -15,59 +13,63 @@ const userSchema = new Schema({
     },
     phone: {
         type: String,
-        required: true,
-        unique: false,
-        sparse:true,
-        default:null
-
+        unique: true,
+        sparse: true
     },
     googleId: {
         type: String,
-        unique: true
+        unique: true,
+        sparse: true
     },
-    password:{
+    password: {
         type: String,
-        required: false
+        required: function () {
+            return !this.googleId;
+        }
     },
-    isBlocked:{
+    isBlocked: {
         type: Boolean,
-        default: false
+        default: false,
+        required: true
     },
     isAdmin: {
         type: Boolean,
-        default: false
+        default: false,
+        required: true
     },
-    cart:[{
+    cart: [{
         type: Schema.Types.ObjectId,
-        ref:"Cart"   
+        ref: "Cart"
     }],
-    wallet:{
+    wallet: {
         type: Number,
         default: 0
     },
-    wishList:[{
+    wishList: [{
         type: Schema.Types.ObjectId,
-        ref: "Whishlist"
+        ref: "Wishlist" // Fixed typo
     }],
-    orderHistory:[{
+    orderHistory: [{
         type: Schema.Types.ObjectId,
-        ref:"Order"
+        ref: "Order"
     }],
-    createdAt:{
-        type:Date,
-        default:Date.now
+    createdAt: {
+        type: Date,
+        default: Date.now
     },
-    referalCode:{
-        type: String,        
+    referalCode: {
+        type: String,
+        default: null
     },
     redeemed: {
-        type: Boolean
+        type: Boolean,
+        default: false
     },
-    redeemedUsers:[{
+    redeemedUsers: [{
         type: Schema.Types.ObjectId,
-        re:"User"
+        ref: "User"
     }],
-    searchHistory:[{
+    searchHistory: [{
         category: {
             type: Schema.Types.ObjectId,
             ref: "Category"
@@ -75,15 +77,12 @@ const userSchema = new Schema({
         brand: {
             type: String
         },
-        searchOn:{
-            type:Date,
-            default:Date.now
+        searchOn: {
+            type: Date,
+            default: Date.now
         }
     }]
+});
 
-
-})
-
-
-const User = mongoose.model("User",userSchema)
-module.exports = User
+const User = mongoose.model("User", userSchema);
+module.exports = User;
