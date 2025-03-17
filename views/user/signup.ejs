@@ -16,22 +16,28 @@
                     <div class="mb-3">
                         <label class="form-label">Name</label>
                         <input id="name" name="name" type="text" class="form-control" placeholder="Enter your name" required>
+                        <div id="error1" class="error-message"></div>
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Email Address</label>
                         <input id="email" name="email" type="email" class="form-control" placeholder="Enter your email" required>
+                        <div id="error2" class="error-message"></div>
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Phone Number</label>
                         <input id="phoneNumber" name="phone" type="tel" class="form-control" placeholder="Enter your phone number">
+                        <div id="error3" class="error-message"></div>
                     </div>
+
                     <div class="mb-3">
                         <label class="form-label">Password</label>
                         <input id="password" name="password" type="password" class="form-control" placeholder="Enter your password" required>
+                        <div id="error4" class="error-message"></div>
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Confirm Password</label>
                         <input id="confirmPassword" name="confirmPassword" type="password" class="form-control" placeholder="Re-enter your password">
+                        <div id="error5" class="error-message"></div>
                     </div>
                     <div class="mb-3">
                         <input id="iagree" type="checkbox" required> I agree to the <a href="#">terms & policy</a>
@@ -56,3 +62,53 @@
     </div>
 </body>
 </html>
+
+
+
+<script>
+
+    const nameid = document.getElementById("name")
+    const emailid = document.getElementById("email")
+    const phoneid = document.getElementById("phone")
+    const passwordid = document.getElementById("password")
+    const cpassid = document.getElementById("confirm-password")
+    const error1 = document.getElementById("error1")
+    const error2 = document.getElementById("error2")
+    const error3 = document.getElementById("error3")
+    const error4 = document.getElementById("error4")
+    const error5 = document.getElementById("error5")
+    const signform = document.getElementById("signform")
+
+
+    document.addEventListener("DOMContentLoaded",function(){
+        signform.addEventListener("submit", function(e){
+
+            nameValidateChecking();
+            emailValidateChecking();
+            phoneValidateChecking();
+            passValidateChecking();
+
+            if(
+                !nameid ||
+                !emailid ||
+                !passwordid ||
+                !error1 ||
+                !error2 ||
+                !error3 ||
+                !error4 ||
+                !error5 ||
+                !signform
+            ){ console.log("One or more elemens not found") }
+
+            if( 
+                error1.innerHTML ||
+                error2.innerHTML ||  
+                error3.innerHTML ||  
+                error4.innerHTML ||  
+                error5.innerHTML 
+            ){ e.preventDefault }
+        })
+
+    })
+
+</script>
