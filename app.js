@@ -3,6 +3,8 @@ const app = express();
 const path = require("path")
 const env = require("dotenv").config();
 const connectDB = require('./config/db'); // Import the connectDB function
+app.use(express.static('public'));
+app.use(express.static(path.join(__dirname, 'public')));
 const userRouter = require("./routes/userRouter")
 
 
