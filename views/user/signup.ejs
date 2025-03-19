@@ -1,190 +1,238 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Signup</title>
-    <link rel="stylesheet" href="/css/style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-</head>
-<body>
-    <div class="container d-flex justify-content-center align-items-center vh-100">
-        <div class="row w-100">
-            <div class="col-md-6 d-flex flex-column justify-content-center p-5">
-                <h2 class="mb-4 text-center">Get Started Now</h2>
-               
-                <form id="signform" method="POST" action="/signup">
-                    <div class="mb-3">
-                        <label class="form-label">Name</label>
-                        <input id="name" name="name" type="text" class="form-control" placeholder="Enter your name" required>
-                        <div id="error1" class="error-message"></div>
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">Email Address</label>
-                        <input id="email" name="email" type="email" class="form-control" placeholder="Enter your email" required>
-                        <div id="error2" class="error-message"></div>
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">Phone Number</label>
-                        <input id="phone" name="phone" type="tel" class="form-control" placeholder="Enter your phone number" required>
-                        <div id="error3" class="error-message"></div>
-                    </div>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Signup</title>
+        <link rel="stylesheet" href="/css/style.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    </head>
+    <body>
 
-                    <div class="mb-3">
-                        <label class="form-label">Password</label>
-                        <input id="password" name="password" type="password" class="form-control" placeholder="Enter your password" required>
-                        <div id="error4" class="error-message"></div>
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">Confirm Password</label>
-                        <input id="confirmPassword" name="confirmPassword" type="password" class="form-control" placeholder="Re-enter your password" required>
-                        <div id="error5" class="error-message"></div>
-                    </div>
-                    <div class="mb-3">
-                        <input id="iagree" type="checkbox" required> I agree to the <a href="#">terms & policy</a>
-                    </div>
-                    <button type="submit" class="btn btn-dark w-100">Signup</button>
-                </form>
+    
+        <div class="container d-flex justify-content-center align-items-center vh-100">
+            <div class="row w-100">
+                <div class="col-md-6 d-flex flex-column justify-content-center p-5">
+                    <h2 class="mb-4 text-center">Get Started Now</h2>
                 
+                    <form id="signform" method="POST" action="/signup">
+                        <div class="mb-3">
+                            <label class="form-label">Name</label>
+                            <input id="name" name="name" type="text" class="form-control" placeholder="Enter your name" required>
+                            <div id="error1" class="error-message"></div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Email Address</label>
+                            <input id="email" name="email" type="email" class="form-control" placeholder="Enter your email" required>
+                            <div id="error2" class="error-message"></div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Phone Number</label>
+                            <input id="phone" name="phone" type="tel" class="form-control" placeholder="Enter your phone number" required>
+                            <div id="error3" class="error-message"></div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Password</label>
+                            <input id="password" name="password" type="password" class="form-control" placeholder="Enter your password" required>
+                            <div id="error4" class="error-message"></div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Confirm Password</label>
+                            <input id="confirmPassword" name="confirmPassword" type="password" class="form-control" placeholder="Re-enter your password" required>
+                            <div id="error5" class="error-message"></div>
+                        </div>
+                        <div class="mb-3">
+                            <input id="iagree" type="checkbox" required> I agree to the <a href="#">terms & policy</a>
+                        </div>
+                        <button type="submit" class="btn btn-dark w-100">Signup</button>
+                    </form>
+                    
 
 
-                <div class="text-center my-3"> 
-                    <span>Or</span>
+                    <div class="text-center my-3"> 
+                        <span>Or</span>
+                    </div>
+                    <button class="btn btn-outline-dark w-100">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png" width="20" class="me-2"> Sign in with Google
+                    </button>
+                    <p class="text-center mt-3">Have an account? <a href="#" class="text-info">Sign In</a></p>
                 </div>
-                <button class="btn btn-outline-dark w-100">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png" width="20" class="me-2"> Sign in with Google
-                </button>
-                <p class="text-center mt-3">Have an account? <a href="#" class="text-info">Sign In</a></p>
-            </div>
-            <div class="col-md-6 d-none d-md-block bg-light d-flex align-items-center justify-content-center">
-                <img src="2.png" alt="Skin.fit" class="img-fluid rounded">
+                <div class="col-md-6 d-none d-md-block bg-light d-flex align-items-center justify-content-center">
+                    <img src="2.png" alt="Skin.fit" class="img-fluid rounded">
+                </div>
             </div>
         </div>
-    </div>
-</body>
-</html>
+
+        
+    </body>
+    </html>
 
 
 
-<script>
+    <script>
 
-    const nameid = document.getElementById("name")
-    const emailid = document.getElementById("email")
-    const phoneid = document.getElementById("phone")
-    const passwordid = document.getElementById("password")
-    const cpassid = document.getElementById("confirmPassword")
-    const error1 = document.getElementById("error1")
-    const error2 = document.getElementById("error2")
-    const error3 = document.getElementById("error3")
-    const error4 = document.getElementById("error4")
-    const error5 = document.getElementById("error5")
-    const signform = document.getElementById("signform")
+        const nameid = document.getElementById("name");
+        const emailid = document.getElementById("email");
+        const phoneid = document.getElementById("phone");
+        const passwordid = document.getElementById("password");
+        const cpassid = document.getElementById("confirmPassword");
+        const iagree = document.getElementById("iagree");
 
-    function nameValidateChecking(e){
-            const nameval = nameid.value
-            const namepattern = /^[A-Za-z\s]+$/
+        const error1 = document.getElementById("error1");
+        const error2 = document.getElementById("error2");
+        const error3 = document.getElementById("error3");
+        const error4 = document.getElementById("error4");
+        const error5 = document.getElementById("error5");
 
-            if(nameval.trim()===""){
-                error1.style.display = "block"
-                error1.innerHTML = "Please enter a valid name"
-            }else if(!namepattern.test(nameval)){
-                error1.style.display = "block"
-                error1.innerHTML = "Name can only contains alphabets and spaces"
-            }else{
-                error1.style.display= "none"
-                error1.innerHTML = ""
+        const signform = document.getElementById("signform");
+
+        
+        const data = {}
+
+
+        async function handleResponse(response) {
+        try {
+            const text = await response.text();
+            // console.log("Server Response: ---------------------------------", text); // Debugging output
+
+            // Try parsing JSON
+            const data = JSON.parse(text);
+            // console.log("Parsed JSON:", data);
+
+            if (data.messageType === "error") {
+                alert(data.message);
+            } else {
+                alert(data.message);
+                setTimeout(() => {
+                    // window.location.href = "/";
+                }, 2000);
             }
+        } catch (error) {
+            console.error("JSON Parsing Error:", error);
+            alert("An error occurred. Please try again later.");
+        }
     }
 
-    function emailValidateChecking(e){
-            const emailVal = emailid.value
-            const emailpattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
 
-             if(!emailpattern.test(emailVal)){
-                error2.style.display = "block"
-                error2.innerHTML = "Invalid Format"
-            }else{
-                error2.style.display= "none"
-                error2.innerHTML = ""
+
+
+        function nameValidateChecking() {
+            error1.innerHTML = ""; // Clear previous errors
+            const nameval = nameid.value.trim();
+            const namepattern = /^[A-Za-z\s]+$/;
+
+            if (nameval === "") {
+                error1.innerHTML = "Please enter a valid name";
+            } else if (!namepattern.test(nameval)) {
+                error1.innerHTML = "Name can only contain alphabets and spaces";
             }
-    }
-
-    function phoneValidateChecking(e){
-        const phoneVal = phoneid.value
-        const phonePattern = /^[0-9]{10}$/;
-
-        if(phoneVal.trim() === "" ){
-            error3.style.display = "block"
-            error3.innerHTML = "Enter Valid Phone Number"
-        }else if (!phonePattern.test(phoneVal)) {
-            error3.style.display = "block";
-            error3.innerHTML = "Enter a valid 10-digit phone number";
-        }else {
-            error3.style.display = "none"
-            error3.innerHTML = ""
-        }
-    }
-
-    function passValidateChecking(e){
-        const passVal = passwordid.value
-        const cpassVal = cpassid.value
-        const alpha = /[a-zA-Z]/
-        const digit = /\d/
-
-        if(passVal.length < 10){
-            error4.style.display = "block"
-            error4.innerHTML = "Should contains atleast 10 charecters"
-        }if (!alpha.test(passVal) || !digit.test(passVal)) {
-             error4.style.display = "block";
-             error4.innerHTML = "Should contain numbers and alphabets";           
-
-        }else {
-            error4.style.display = "none"
-            error4.innerHTML = ""
         }
 
-        if(passVal !== cpassVal){
-            error5.style.display = "block"
-            error5.innerHTML = "Password do not match"
-        }else{
-            error5.style.display = "none"
+        function emailValidateChecking() {
+            error2.innerHTML = ""; 
+            const emailVal = emailid.value.trim();
+            const emailpattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+            if (!emailpattern.test(emailVal)) {
+                error2.innerHTML = "Invalid email format";
+            }
         }
-    }
 
+        function phoneValidateChecking() {
+            error3.innerHTML = ""; 
+            const phoneVal = phoneid.value.trim();
+            const phonePattern = /^[0-9]{10}$/;
 
-    document.addEventListener("DOMContentLoaded",function(){
-        signform.addEventListener("submit", function(e){
+            if (phoneVal === "") {
+                error3.innerHTML = "Enter a valid phone number";
+            } else if (!phonePattern.test(phoneVal)) {
+                error3.innerHTML = "Phone number must be exactly 10 digits";
+            }
+        }
 
+        function passValidateChecking() {
+            error4.innerHTML = ""; 
+            error5.innerHTML = ""; 
+
+            const passVal = passwordid.value;
+            const cpassVal = cpassid.value;
+
+            const lengthCheck = passVal.length >= 10;
+            const upperCase = /[A-Z]/.test(passVal);
+            const lowerCase = /[a-z]/.test(passVal);
+            const digit = /\d/.test(passVal);
+            const specialChar = /[@$!%*?&#]/.test(passVal);
+
+            if (!lengthCheck) {
+                error4.innerHTML = "Password must contain at least 10 characters";
+            } else if (!upperCase || !lowerCase || !digit || !specialChar) {
+                error4.innerHTML = "Password must contain uppercase, lowercase, a number, and a special character";
+            }
+
+            if (passVal !== cpassVal) {
+                error5.innerHTML = "Passwords do not match";
+            }
+        }
+
+        function termsValidateChecking() {
+            if (!iagree.checked) {
+                alert("You must agree to the terms & policy to proceed.");
+                return false;
+            }
+            return true;
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+        signform.addEventListener("submit", async function (e) {
+            e.preventDefault(); // Prevent default form submission
+
+            // Run validation functions
             nameValidateChecking();
             emailValidateChecking();
             phoneValidateChecking();
             passValidateChecking();
 
-         
-            if(
-                !nameid ||
-                !emailid ||
-                !passwordid ||
-                !error1 ||
-                !error2 ||
-                !error3 ||
-                !error4 ||
-                !error5 ||
-                !signform
-            ){ console.log("One or more elemens not found") }
-
-            if( 
+            // If any validation error exists, stop submission
+            if (
                 error1.innerHTML ||
-                error2.innerHTML ||  
-                error3.innerHTML ||  
-                error4.innerHTML ||  
-                error5.innerHTML 
-            ){ e.preventDefault() }
+                error2.innerHTML ||
+                error3.innerHTML ||
+                error4.innerHTML ||
+                error5.innerHTML ||
+                !termsValidateChecking()
+            ) {
+                return;
+            }
 
-            console.log("HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH")
+            // Collect form data
+            const formData = {
+                name: nameid.value,
+                email: emailid.value,
+                phone: phoneid.value,
+                password: passwordid.value,
+                confirmPassword: cpassid.value
+            };
 
-        })
 
-    })
+            console.log(formData, '------------------------------')
 
-</script>
+            try {
+                // Send data to the server
+                const response = await fetch("/signup", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify(formData),
+                });
+
+                // Call handleResponse function to process server response
+                await handleResponse(response);
+            } catch (error) {
+                console.error("Error submitting form:", error);
+            }
+        });
+    });
+
+    </script>
